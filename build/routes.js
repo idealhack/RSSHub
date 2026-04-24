@@ -137254,9 +137254,15 @@ export default {
         "parameters": {
           "id": "漫画ID"
         },
-        "example": "/zaimanhua/comic/14488",
+        "example": "/zaimanhua/comic/57069",
         "features": {
-          "requireConfig": false,
+          "requireConfig": [
+            {
+              "name": "ZAIMANHUA_TOKEN",
+              "optional": true,
+              "description": "用户登录后，可以从浏览器开发者工具 Network 面板中的请求信息中获取 token，使用请求中的 `Authorization` 的值，完整设置为 `Bearer <token>`，或直接设置 token 并由路由自动补齐 `Bearer ` 前缀。"
+            }
+          ],
           "requirePuppeteer": false,
           "antiCrawler": false,
           "supportBT": false,
@@ -137277,6 +137283,7 @@ export default {
         "maintainers": [
           "kjasn"
         ],
+        "description": "::: Warning\n未登录用户无法获取到所有漫画，需要设置`ZAIMANHUA_TOKEN`环境变量以使用 API 授权访问。\n:::",
         "location": "comic.ts",
         "module": () => import('@/routes/zaimanhua/comic.ts')
       },
@@ -137287,7 +137294,13 @@ export default {
         ],
         "example": "/zaimanhua/update",
         "features": {
-          "requireConfig": false,
+          "requireConfig": [
+            {
+              "name": "ZAIMANHUA_TOKEN",
+              "optional": true,
+              "description": "可从浏览器开发者工具中抓取站点请求头 `Authorization` 的 Bearer token，并配置为环境变量。可设置为完整值 `Bearer <token>`，或仅设置 token 由路由自动补齐 `Bearer ` 前缀。"
+            }
+          ],
           "requirePuppeteer": false,
           "antiCrawler": false,
           "supportBT": false,
@@ -137307,6 +137320,7 @@ export default {
         "maintainers": [
           "kjasn"
         ],
+        "description": "::: Warning\n建议设置`ZAIMANHUA_TOKEN`环境变量以使用 API 授权访问。\n:::",
         "location": "update.ts",
         "module": () => import('@/routes/zaimanhua/update.ts')
       }
