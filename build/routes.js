@@ -10841,6 +10841,64 @@ export default {
   },
   "apple": {
     "routes": {
+      "/apps/update/:country/:id/:platform?": {
+        "path": "/apps/update/:country/:id/:platform?",
+        "categories": [
+          "program-update"
+        ],
+        "view": 5,
+        "example": "/apple/apps/update/us/id408709785",
+        "parameters": {
+          "country": "App Store Country, obtain from the app URL, see below",
+          "id": "App id, obtain from the app URL",
+          "platform": {
+            "description": "App Platform, see below, all by default",
+            "options": [
+              {
+                "value": "All",
+                "label": "all"
+              },
+              {
+                "value": "iOS",
+                "label": "iOS"
+              },
+              {
+                "value": "macOS",
+                "label": "macOS"
+              },
+              {
+                "value": "tvOS",
+                "label": "tvOS"
+              }
+            ]
+          }
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "apps.apple.com/:country/app/:appSlug/:id",
+              "apps.apple.com/:country/app/:id"
+            ],
+            "target": "/apps/update/:country/:id"
+          }
+        ],
+        "name": "App Update",
+        "maintainers": [
+          "EkkoG",
+          "nczitzk"
+        ],
+        "description": "\n::: tip\n  For example, the URL of [GarageBand](https://apps.apple.com/us/app/garageband/id408709785) in the App Store is `https://apps.apple.com/us/app/garageband/id408709785`. In this case, the `App Store Country` parameter for the route is `us`, and the `App id` parameter is `id408709785`. So the route should be [`/apple/apps/update/us/id408709785`](https://rsshub.app/apple/apps/update/us/id408709785).\n:::",
+        "location": "apps.ts",
+        "module": () => import('@/routes/apple/apps.ts')
+      },
       "/design": {
         "categories": [
           "design"
@@ -11018,64 +11076,6 @@ export default {
         },
         "location": "security-releases.ts",
         "module": () => import('@/routes/apple/security-releases.ts')
-      },
-      "/apps/update/:country/:id/:platform?": {
-        "path": "/apps/update/:country/:id/:platform?",
-        "categories": [
-          "program-update"
-        ],
-        "view": 5,
-        "example": "/apple/apps/update/us/id408709785",
-        "parameters": {
-          "country": "App Store Country, obtain from the app URL, see below",
-          "id": "App id, obtain from the app URL",
-          "platform": {
-            "description": "App Platform, see below, all by default",
-            "options": [
-              {
-                "value": "All",
-                "label": "all"
-              },
-              {
-                "value": "iOS",
-                "label": "iOS"
-              },
-              {
-                "value": "macOS",
-                "label": "macOS"
-              },
-              {
-                "value": "tvOS",
-                "label": "tvOS"
-              }
-            ]
-          }
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "apps.apple.com/:country/app/:appSlug/:id",
-              "apps.apple.com/:country/app/:id"
-            ],
-            "target": "/apps/update/:country/:id"
-          }
-        ],
-        "name": "App Update",
-        "maintainers": [
-          "EkkoG",
-          "nczitzk"
-        ],
-        "description": "\n::: tip\n  For example, the URL of [GarageBand](https://apps.apple.com/us/app/garageband/id408709785) in the App Store is `https://apps.apple.com/us/app/garageband/id408709785`. In this case, the `App Store Country` parameter for the route is `us`, and the `App id` parameter is `id408709785`. So the route should be [`/apple/apps/update/us/id408709785`](https://rsshub.app/apple/apps/update/us/id408709785).\n:::",
-        "location": "apps.ts",
-        "module": () => import('@/routes/apple/apps.ts')
       }
     },
     "apiRoutes": {},
