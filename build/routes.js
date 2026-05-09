@@ -120656,15 +120656,23 @@ export default {
         "radar": [
           {
             "source": [
-              "techflowpost.com/newsletter/index.html"
+              "techflowpost.com/zh-CN/newsletter"
             ]
           }
         ],
         "name": "快讯",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
         "maintainers": [
           "nczitzk"
         ],
-        "url": "techflowpost.com/",
+        "url": "techflowpost.com/zh-CN/newsletter",
         "location": "express.ts",
         "module": () => import('@/routes/techflowpost/express.ts')
       },
@@ -120681,7 +120689,7 @@ export default {
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
-          "antiCrawler": false,
+          "antiCrawler": true,
           "supportBT": false,
           "supportPodcast": false,
           "supportScihub": false
@@ -120689,7 +120697,7 @@ export default {
         "radar": [
           {
             "source": [
-              "techflowpost.com/article/index.html"
+              "techflowpost.com/zh-CN/article"
             ]
           }
         ],
@@ -120697,7 +120705,7 @@ export default {
         "maintainers": [
           "zhenlohuang"
         ],
-        "url": "techflowpost.com/article/index.html",
+        "url": "techflowpost.com/zh-CN/article",
         "description": "| 全部 | 行业 & 项目观察 | 项目简介 | 项目动态 | 赛道解读 | 播客笔记 | 交易观察 | VC 洞察 | 实用教程 | 人物故事 & 访谈 | 法律 & 监管动态 | 活动动态 | 交易所动态 |\n| ---- | --------------- | -------- | -------- | -------- | -------- | -------- | ------- | -------- | --------------- | --------------- | -------- | ---------- |\n|      | 2040            | 2046     | 2047     | 2045     | 2044     | 2043     | 2042    | 2041     | 2039            | 2033            | 2032     | 2031       |",
         "location": "featured.ts",
         "module": () => import('@/routes/techflowpost/featured.ts')
@@ -120708,7 +120716,7 @@ export default {
         "radar": [
           {
             "source": [
-              "techflowpost.com/"
+              "techflowpost.com/zh-CN"
             ]
           }
         ],
@@ -120717,10 +120725,18 @@ export default {
           "finance"
         ],
         "view": 0,
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
         "maintainers": [
           "nczitzk"
         ],
-        "url": "techflowpost.com/",
+        "url": "techflowpost.com/zh-CN",
         "location": "index.ts",
         "module": () => import('@/routes/techflowpost/index.ts')
       }
